@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode user data
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+xcuserdata/
+
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+
+# Logs and temp
+*.log
+*.tmp
+tmp/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment / secrets
+.env
+.env.*
+*.p12
+*.mobileprovision
