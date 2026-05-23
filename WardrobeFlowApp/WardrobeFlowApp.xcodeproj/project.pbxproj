@@ -23,7 +23,26 @@
 		F1B5AE042FC0EB0900DDAD25 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5ADF12FC0EB0900DDAD25 /* ProfileView.swift */; };
 		F1B5AE052FC0EB0900DDAD25 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5ADE82FC0EB0900DDAD25 /* WeatherViewModel.swift */; };
 		F1B5AE062FC0EB0900DDAD25 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B5ADF42FC0EB0900DDAD25 /* WardrobeView.swift */; };
+		F1C0DE012FC1AA1100BEEF00 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0DE002FC1AA1100BEEF00 /* ItemDetailView.swift */; };
+		F1C0DE032FC1B1A600BEEF00 /* BatchAddItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0DE022FC1B1A600BEEF00 /* BatchAddItemsView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1B8AC5A2FC0FAE80028E396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B5ADA62FC0EAC100DDAD25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1B5ADAD2FC0EAC100DDAD25;
+			remoteInfo = WardrobeFlowApp;
+		};
+		F1B8AC692FC0FB090028E396 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B5ADA62FC0EAC100DDAD25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1B5ADAD2FC0EAC100DDAD25;
+			remoteInfo = WardrobeFlowApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F1B5ADAE2FC0EAC100DDAD25 /* WardrobeFlowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardrobeFlowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +62,10 @@
 		F1B5ADF32FC0EB0900DDAD25 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		F1B5ADF42FC0EB0900DDAD25 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
 		F1B5ADF62FC0EB0900DDAD25 /* WardrobeMVPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeMVPApp.swift; sourceTree = "<group>"; };
+		F1C0DE002FC1AA1100BEEF00 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		F1C0DE022FC1B1A600BEEF00 /* BatchAddItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchAddItemsView.swift; sourceTree = "<group>"; };
+		F1B8AC562FC0FAE80028E396 /* WardrobeFlowAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WardrobeFlowAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B8AC632FC0FB090028E396 /* WardrobeFlowAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WardrobeFlowAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -51,10 +74,34 @@
 			path = WardrobeFlowApp;
 			sourceTree = "<group>";
 		};
+		F1B8AC572FC0FAE80028E396 /* WardrobeFlowAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WardrobeFlowAppTests;
+			sourceTree = "<group>";
+		};
+		F1B8AC642FC0FB090028E396 /* WardrobeFlowAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WardrobeFlowAppUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F1B5ADAB2FC0EAC100DDAD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B8AC532FC0FAE80028E396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B8AC602FC0FB090028E396 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				F1B5ADB02FC0EAC100DDAD25 /* WardrobeFlowApp */,
+				F1B8AC572FC0FAE80028E396 /* WardrobeFlowAppTests */,
+				F1B8AC642FC0FB090028E396 /* WardrobeFlowAppUITests */,
 				F1B5ADAF2FC0EAC100DDAD25 /* Products */,
 				F1B5ADE32FC0EB0900DDAD25 /* Models */,
 				F1B5ADE72FC0EB0900DDAD25 /* Services */,
@@ -81,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				F1B5ADAE2FC0EAC100DDAD25 /* WardrobeFlowApp.app */,
+				F1B8AC562FC0FAE80028E396 /* WardrobeFlowAppTests.xctest */,
+				F1B8AC632FC0FB090028E396 /* WardrobeFlowAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +176,8 @@
 			children = (
 				F1B5ADEC2FC0EB0900DDAD25 /* Components */,
 				F1B5ADED2FC0EB0900DDAD25 /* AddItemView.swift */,
+				F1C0DE022FC1B1A600BEEF00 /* BatchAddItemsView.swift */,
+				F1C0DE002FC1AA1100BEEF00 /* ItemDetailView.swift */,
 				F1B5ADEE2FC0EB0900DDAD25 /* OutfitBuilderView.swift */,
 				F1B5ADEF2FC0EB0900DDAD25 /* OutfitsView.swift */,
 				F1B5ADF02FC0EB0900DDAD25 /* PlannerView.swift */,
@@ -161,6 +214,52 @@
 			productReference = F1B5ADAE2FC0EAC100DDAD25 /* WardrobeFlowApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F1B8AC552FC0FAE80028E396 /* WardrobeFlowAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B8AC5E2FC0FAE80028E396 /* Build configuration list for PBXNativeTarget "WardrobeFlowAppTests" */;
+			buildPhases = (
+				F1B8AC522FC0FAE80028E396 /* Sources */,
+				F1B8AC532FC0FAE80028E396 /* Frameworks */,
+				F1B8AC542FC0FAE80028E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1B8AC5B2FC0FAE80028E396 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F1B8AC572FC0FAE80028E396 /* WardrobeFlowAppTests */,
+			);
+			name = WardrobeFlowAppTests;
+			packageProductDependencies = (
+			);
+			productName = WardrobeFlowAppTests;
+			productReference = F1B8AC562FC0FAE80028E396 /* WardrobeFlowAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F1B8AC622FC0FB090028E396 /* WardrobeFlowAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B8AC6B2FC0FB090028E396 /* Build configuration list for PBXNativeTarget "WardrobeFlowAppUITests" */;
+			buildPhases = (
+				F1B8AC5F2FC0FB090028E396 /* Sources */,
+				F1B8AC602FC0FB090028E396 /* Frameworks */,
+				F1B8AC612FC0FB090028E396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1B8AC6A2FC0FB090028E396 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F1B8AC642FC0FB090028E396 /* WardrobeFlowAppUITests */,
+			);
+			name = WardrobeFlowAppUITests;
+			packageProductDependencies = (
+			);
+			productName = WardrobeFlowAppUITests;
+			productReference = F1B8AC632FC0FB090028E396 /* WardrobeFlowAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -173,6 +272,14 @@
 				TargetAttributes = {
 					F1B5ADAD2FC0EAC100DDAD25 = {
 						CreatedOnToolsVersion = 26.5;
+					};
+					F1B8AC552FC0FAE80028E396 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = F1B5ADAD2FC0EAC100DDAD25;
+					};
+					F1B8AC622FC0FB090028E396 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = F1B5ADAD2FC0EAC100DDAD25;
 					};
 				};
 			};
@@ -191,12 +298,28 @@
 			projectRoot = "";
 			targets = (
 				F1B5ADAD2FC0EAC100DDAD25 /* WardrobeFlowApp */,
+				F1B8AC552FC0FAE80028E396 /* WardrobeFlowAppTests */,
+				F1B8AC622FC0FB090028E396 /* WardrobeFlowAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F1B5ADAC2FC0EAC100DDAD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B8AC542FC0FAE80028E396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B8AC612FC0FB090028E396 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,13 +346,42 @@
 				F1B5AE012FC0EB0900DDAD25 /* OutfitBuilderView.swift in Sources */,
 				F1B5AE022FC0EB0900DDAD25 /* DataSeeder.swift in Sources */,
 				F1B5AE032FC0EB0900DDAD25 /* AddItemView.swift in Sources */,
+				F1C0DE032FC1B1A600BEEF00 /* BatchAddItemsView.swift in Sources */,
+				F1C0DE012FC1AA1100BEEF00 /* ItemDetailView.swift in Sources */,
 				F1B5AE042FC0EB0900DDAD25 /* ProfileView.swift in Sources */,
 				F1B5AE052FC0EB0900DDAD25 /* WeatherViewModel.swift in Sources */,
 				F1B5AE062FC0EB0900DDAD25 /* WardrobeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1B8AC522FC0FAE80028E396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B8AC5F2FC0FB090028E396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1B8AC5B2FC0FAE80028E396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1B5ADAD2FC0EAC100DDAD25 /* WardrobeFlowApp */;
+			targetProxy = F1B8AC5A2FC0FAE80028E396 /* PBXContainerItemProxy */;
+		};
+		F1B8AC6A2FC0FB090028E396 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1B5ADAD2FC0EAC100DDAD25 /* WardrobeFlowApp */;
+			targetProxy = F1B8AC692FC0FB090028E396 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F1B5ADB72FC0EAC200DDAD25 /* Debug */ = {
@@ -360,12 +512,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Нужно для съемки фото вещей";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Нужно для определения погоды по местоположению";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Нужно для выбора фото вещей";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Нужно для съемки фото вещей";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Нужно для выбора фото вещей";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Нужно для определения погоды по местоположению";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,12 +546,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Нужно для съемки фото вещей";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Нужно для определения погоды по местоположению";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Нужно для выбора фото вещей";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Нужно для съемки фото вещей";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Нужно для выбора фото вещей";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Нужно для определения погоды по местоположению";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,6 +568,88 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1B8AC5C2FC0FAE80028E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kinkpunk.WardrobeFlowAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WardrobeFlowApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WardrobeFlowApp";
+			};
+			name = Debug;
+		};
+		F1B8AC5D2FC0FAE80028E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kinkpunk.WardrobeFlowAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WardrobeFlowApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WardrobeFlowApp";
+			};
+			name = Release;
+		};
+		F1B8AC6C2FC0FB090028E396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kinkpunk.WardrobeFlowAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WardrobeFlowApp;
+			};
+			name = Debug;
+		};
+		F1B8AC6D2FC0FB090028E396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kinkpunk.WardrobeFlowAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WardrobeFlowApp;
 			};
 			name = Release;
 		};
@@ -436,6 +670,24 @@
 			buildConfigurations = (
 				F1B5ADBA2FC0EAC200DDAD25 /* Debug */,
 				F1B5ADBB2FC0EAC200DDAD25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B8AC5E2FC0FAE80028E396 /* Build configuration list for PBXNativeTarget "WardrobeFlowAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B8AC5C2FC0FAE80028E396 /* Debug */,
+				F1B8AC5D2FC0FAE80028E396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B8AC6B2FC0FB090028E396 /* Build configuration list for PBXNativeTarget "WardrobeFlowAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B8AC6C2FC0FB090028E396 /* Debug */,
+				F1B8AC6D2FC0FB090028E396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

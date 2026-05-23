@@ -17,6 +17,7 @@ struct AddItemView: View {
     @State private var selectedPhotoItem: PhotosPickerItem?
     @State private var selectedImage: UIImage?
     @State private var isCameraPresented = false
+    @State private var addAnotherAfterSave = true
 
     var body: some View {
         NavigationStack {
@@ -28,12 +29,14 @@ struct AddItemView: View {
                             PhotosPicker(selection: $selectedPhotoItem, matching: .images) {
                                 Label("Choose from gallery", systemImage: "photo")
                             }
+                            .accessibilityIdentifier(AccessibilityID.AddItem.chooseFromGallery)
                             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                                 Button {
                                     isCameraPresented = true
                                 } label: {
                                     Label("Take photo", systemImage: "camera")
                                 }
+                                .accessibilityIdentifier(AccessibilityID.AddItem.takePhoto)
                             }
                         }
                     }
@@ -48,6 +51,7 @@ struct AddItemView: View {
 
                 Section("Basics") {
                     TextField("Item name", text: $name)
+                        .accessibilityIdentifier(AccessibilityID.AddItem.nameField)
                     Picker("Category", selection: $category) {
                         ForEach(ClothingCategory.allCases) { Text($0.title).tag($0) }
                     }
@@ -68,18 +72,29 @@ struct AddItemView: View {
                     }
                     TextField("Tags separated by comma", text: $tagsText)
                 }
+
+                Section {
+                    Toggle("Add another after saving", isOn: $addAnotherAfterSave)
+                        .accessibilityIdentifier(AccessibilityID.AddItem.addAnotherToggle)
+                }
             }
             .navigationTitle("New Item")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") { dismiss() }
+                        .accessibilityIdentifier(AccessibilityID.AddItem.cancelButton)
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
                         saveItem()
-                        dismiss()
+                        if addAnotherAfterSave {
+                            resetForm()
+                        } else {
+                            dismiss()
+                        }
                     }
                     .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .accessibilityIdentifier(AccessibilityID.AddItem.saveButton)
                 }
             }
             .sheet(isPresented: $isCameraPresented) {
@@ -125,5 +140,18 @@ struct AddItemView: View {
         )
         modelContext.insert(item)
         try? modelContext.save()
+    }
+
+    private func resetForm() {
+        name = ""
+        category = .top
+        color = .black
+        season = .allSeason
+        formality = .casual
+        status = .clean
+        tagsText = ""
+        selectedPhotoItem = nil
+        selectedImage = nil
+        isCameraPresented = false
     }
 }

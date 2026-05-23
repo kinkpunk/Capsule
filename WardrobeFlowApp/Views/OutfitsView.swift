@@ -7,29 +7,41 @@ struct OutfitsView: View {
     @Query(sort: \OutfitPlan.date, order: .forward) private var plans: [OutfitPlan]
 
     @State private var isBuilderPresented = false
-    @State private var selectedDate = Date()
+    @State private var isAssignPresented = false
+    @State private var assignDate = Date()
+    @State private var assignOutfit: Outfit?
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(outfits) { outfit in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(outfit.name)
-                            .font(.headline)
-                        Text(outfit.items.map(\.name).joined(separator: ", "))
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+            Group {
+                if outfits.isEmpty {
+                    ContentUnavailableView(
+                        "No outfits yet",
+                        systemImage: "square.grid.2x2",
+                        description: Text("Create a few outfits so you can plan them on the calendar.")
+                    )
+                    .padding()
+                } else {
+                    List {
+                        ForEach(outfits) { outfit in
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(outfit.name)
+                                    .font(.headline)
+                                Text(outfit.items.map(\.name).joined(separator: ", "))
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
 
-                        HStack {
-                            DatePicker("Date", selection: $selectedDate, displayedComponents: .date)
-                                .labelsHidden()
-                            Button("Assign") {
-                                assign(outfit, to: selectedDate)
+                                Button("Assign date…") {
+                                    assignOutfit = outfit
+                                    assignDate = .now
+                                    isAssignPresented = true
+                                }
+                                .buttonStyle(.bordered)
+                                .accessibilityIdentifier(AccessibilityID.Outfits.assignButtonPrefix + outfit.id.uuidString)
                             }
-                            .buttonStyle(.bordered)
+                            .padding(.vertical, 4)
                         }
                     }
-                    .padding(.vertical, 4)
                 }
             }
             .navigationTitle("Outfits")
@@ -40,10 +52,25 @@ struct OutfitsView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                    .accessibilityIdentifier(AccessibilityID.Outfits.addButton)
+                }
+                if outfits.isEmpty {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button {
+                            isBuilderPresented = true
+                        } label: {
+                            Label("New outfit", systemImage: "plus")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .accessibilityIdentifier(AccessibilityID.Outfits.emptyAddButton)
+                    }
                 }
             }
             .sheet(isPresented: $isBuilderPresented) {
                 OutfitBuilderView()
+            }
+            .sheet(isPresented: $isAssignPresented) {
+                assignSheet
             }
         }
     }
@@ -57,5 +84,32 @@ struct OutfitsView: View {
             modelContext.insert(plan)
         }
         try? modelContext.save()
+    }
+
+    private var assignSheet: some View {
+        NavigationStack {
+            Form {
+                DatePicker("Date", selection: $assignDate, displayedComponents: .date)
+                    .datePickerStyle(.graphical)
+            }
+            .navigationTitle("Assign outfit")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        isAssignPresented = false
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        if let outfit = assignOutfit {
+                            assign(outfit, to: assignDate)
+                        }
+                        isAssignPresented = false
+                    }
+                    .accessibilityIdentifier(AccessibilityID.Outfits.assignSheetSave)
+                    .disabled(assignOutfit == nil)
+                }
+            }
+        }
     }
 }

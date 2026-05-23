@@ -9,6 +9,9 @@ struct TodayView: View {
     @Query(sort: \OutfitPlan.date, order: .forward) private var plans: [OutfitPlan]
 
     private let recommender = OutfitRecommender()
+    @State private var isAddPresented = false
+    @State private var isOutfitBuilderPresented = false
+    @State private var isBatchPresented = false
 
     var body: some View {
         NavigationStack {
@@ -23,10 +26,50 @@ struct TodayView: View {
             .navigationTitle("Today")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Refresh") {
-                        weatherViewModel.requestWeather()
+                    Menu {
+                        Button {
+                            isAddPresented = true
+                        } label: {
+                            Label("Add item", systemImage: "tshirt")
+                        }
+                        .accessibilityIdentifier(AccessibilityID.Today.addItem)
+
+                        Button {
+                            isBatchPresented = true
+                        } label: {
+                            Label("Batch import photos", systemImage: "photo.on.rectangle.angled")
+                        }
+                        .accessibilityIdentifier(AccessibilityID.Today.batchImport)
+
+                        Button {
+                            isOutfitBuilderPresented = true
+                        } label: {
+                            Label("New outfit", systemImage: "square.grid.2x2")
+                        }
+                        .accessibilityIdentifier(AccessibilityID.Today.newOutfit)
+
+                        Divider()
+
+                        Button {
+                            weatherViewModel.requestWeather()
+                        } label: {
+                            Label("Refresh weather", systemImage: "arrow.clockwise")
+                        }
+                        .accessibilityIdentifier(AccessibilityID.Today.refreshButton)
+                    } label: {
+                        Image(systemName: "plus.circle")
                     }
+                    .accessibilityIdentifier(AccessibilityID.Today.addMenu)
                 }
+            }
+            .sheet(isPresented: $isAddPresented) {
+                AddItemView()
+            }
+            .sheet(isPresented: $isBatchPresented) {
+                BatchAddItemsView()
+            }
+            .sheet(isPresented: $isOutfitBuilderPresented) {
+                OutfitBuilderView()
             }
         }
     }
@@ -59,9 +102,11 @@ struct TodayView: View {
                 .font(.headline)
             let suggestions = recommender.recommendedOutfits(wardrobe: availableWardrobe, weather: weatherViewModel.snapshot)
             if suggestions.isEmpty {
-                Text("Add more clean items to generate outfit options.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                ContentUnavailableView(
+                    "No recommendations yet",
+                    systemImage: "wand.and.stars",
+                    description: Text("Add a few clean items to generate outfit options.")
+                )
             } else {
                 ForEach(Array(suggestions.enumerated()), id: \.offset) { idx, combo in
                     VStack(alignment: .leading, spacing: 6) {
